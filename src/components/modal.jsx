@@ -20,12 +20,20 @@ const ModalComponent = props => {
         isOpen={props.isOpen}
         onRequestClose={closeModal}
         contentLabel="View Activity"
+        style={{
+          overlay: {},
+          content: {
+            textAlign: "center",
+            left: "50%",
+            transform: "translateX(-50%)"
+          }
+        }}
       >
         {member ? (
           <div>
             <h3>{member["real_name"]}</h3>
             <h3>{member["tz"]}</h3>
-            <hr />
+
             <Calender />
           </div>
         ) : null}

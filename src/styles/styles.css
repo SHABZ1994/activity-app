@@ -1,5 +1,19 @@
-header {
+.header {
   text-align: center;
+  background-color: slategray;
+  color: #fff;
+  border-radius: 100px;
+}
+
+.main-container {
+  padding-top: 1rem;
+  min-width: 780px;
+}
+.MuiTypography-body1 {
+  text-align: center;
+}
+.MuiContainer-root {
+  width: 90%;
 }
 .view-button {
   border: 2px solid #2ca3e7;
@@ -7,14 +21,12 @@ header {
   background-color: #ffffff;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: 200;
-  font-size: 0.9rem;
   cursor: pointer;
   padding: 5px;
 }
 
 .view-button:hover {
-  font-weight: 400;
-  font-size: 1rem;
+  border-color: #77c7f5;
   box-shadow: gray;
   transition: all;
 }
@@ -29,4 +41,14 @@ header {
   font-size: 0.9rem;
   cursor: pointer;
   padding: 5px;
+}
+
+@media (min-width: 600px) {
+  .view-button {
+    font-weight: 100;
+    font-size: 0.7rem;
+  }
+  .MuiContainer-root {
+    width: 100%;
+  }
 }
