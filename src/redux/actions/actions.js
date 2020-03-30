@@ -6,7 +6,7 @@ export const fetchDataAction = () => {
 
   return dispatch => {
     axios
-      .get("https://activity-app-json-server.herokuapp.com/members")
+      .get("/members")
       .then(res => dispatch(receivedDataAction(res.data)))
       .catch(err => encounteredError(err));
   };
