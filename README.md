@@ -3,17 +3,13 @@
 The project has been created using CRA with a Redux workflow. This app fetches data of members from server and displays the list of members, with each member having there data displayed in a Modal. Within the modal calender with the highlighted active dates are displayed, on clicking of which displays the start and end time of activity on the specific day. If there is no activity for the day, then "N/A" will be displayed.
 For styling, Material UI components are used.
 
-This application has been hosted in Heroku. [Heroku-Link]()
+This application has been hosted in Heroku. [Heroku-Link](https://activity-app-with-react.herokuapp.com/)
 
 ## Getting Started with the project
 
 ````
     npm i
-```
-```
-    json-server --watch test.json --port 3001
-```
-```
+
     npm start
 ````
 
