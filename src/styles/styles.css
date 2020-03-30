@@ -1,0 +1,32 @@
+header {
+  text-align: center;
+}
+.view-button {
+  border: 2px solid #2ca3e7;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 200;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.view-button:hover {
+  font-weight: 400;
+  font-size: 1rem;
+  box-shadow: gray;
+  transition: all;
+}
+
+.close-button {
+  border: 2px solid #e72c2cf8;
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 100;
+  font-weight: 200;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 5px;
+}
