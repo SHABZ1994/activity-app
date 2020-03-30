@@ -14,6 +14,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
+import Loader from "react-loader-spinner";
 
 class TableComponent extends React.Component {
   componentDidMount() {
@@ -21,52 +22,57 @@ class TableComponent extends React.Component {
   }
 
   handleClick = e => {
-    console.log(e.target.id);
-
     this.props.toggleModal();
     this.props.setCurrentMember(e.target.id);
   };
   render() {
-    const { members } = this.props;
-    console.log(members);
-
+    const { members, loading } = this.props;
     return (
       <Container>
-        <TableContainer component={Paper}>
-          <Table size="small" aria-label="a dense table" className="data-table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="left">Name</TableCell>
-                <TableCell align="left">Location</TableCell>
-                <TableCell></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {members.map(member => (
-                <TableRow key={member.id}>
-                  <TableCell align="left">{member.real_name}</TableCell>
-                  <TableCell align="left">{member.tz}</TableCell>
-                  <TableCell>
-                    <button
-                      onClick={this.handleClick}
-                      id={member.id}
-                      className="view-button"
-                    >
-                      View Details
-                    </button>
-                  </TableCell>
+        {loading ? (
+          <Loader type="Grid" color="#31a5cc" height={100} width={100} />
+        ) : (
+          <TableContainer component={Paper}>
+            <Table
+              size="small"
+              aria-label="a dense table"
+              className="data-table"
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">Name</TableCell>
+                  <TableCell align="left">Location</TableCell>
+                  <TableCell></TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {members.map(member => (
+                  <TableRow key={member.id}>
+                    <TableCell align="left">{member.real_name}</TableCell>
+                    <TableCell align="left">{member.tz}</TableCell>
+                    <TableCell>
+                      <button
+                        onClick={this.handleClick}
+                        id={member.id}
+                        className="view-button"
+                      >
+                        View Details
+                      </button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
       </Container>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  members: state.data
+  members: state.data,
+  loading: state.loading
 });
 const mapDispatchToProps = dispatch => ({
   fetchMembers: () => dispatch(fetchDataAction()),

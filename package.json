@@ -2,7 +2,6 @@
   "name": "full_throttle_calender",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://activity-app-json-server.herokuapp.com",
   "dependencies": {
     "@material-ui/core": "^4.9.8",
     "@testing-library/jest-dom": "^4.2.4",
@@ -13,6 +12,7 @@
     "react": "^16.13.1",
     "react-day-picker": "^7.4.0",
     "react-dom": "^16.13.1",
+    "react-loader-spinner": "^3.1.5",
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
@@ -22,7 +22,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "set HTTPS=true&&react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
